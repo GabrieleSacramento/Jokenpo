@@ -80,6 +80,21 @@ class MainActivity : AppCompatActivity() {
                 hide()
             }
         }
+
+        imgBtnLogo.setOnClickListener {
+            reset()
+        }
+    }
+
+    fun reset() {
+
+        playerOneTotal = 0
+        playerTwoTotal = 0
+
+        pointResultOne.text = "Player one: $playerOneTotal ponto(s)"
+        pointResultTwo.text = "Player Two: $playerTwoTotal ponto(s)"
+
+        hide()
     }
 
     fun hide() {
