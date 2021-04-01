@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- container principal -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- logo -->
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo"/>
+
+        <!-- end logo -->
+
+        <!-- column buttons first player -->
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center">
+
+            <ImageButton
+                android:id="@+id/imgBtnRockRigth"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:src="@drawable/rock_right"/>
+
+            <ImageButton
+                android:id="@+id/imgBtnPaperRigth"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:src="@drawable/paper_right"/>
+
+            <ImageButton
+                android:id="@+id/imgBtnScissorsRigth"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:src="@drawable/scissors_right"/>
+
+        </LinearLayout>
+
+        <!-- end column buttons first player -->
+
+        <!-- Column game -->
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="300dp"
+            android:layout_gravity="center"
+            android:layout_height="200dp">
+
+            <!-- Player one -->
+
+            <ImageView
+                android:id="@+id/imgLeftBet"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/scissors_left"
+                android:scaleType="centerInside"/>
+
+            <!-- End player one -->
+
+            <!-- Player two -->
+
+            <ImageView
+                android:id="@+id/imgRightBet"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/scissors_right"
+                android:scaleType="centerInside"/>
+
+            <!-- End player two -->
+
+        </LinearLayout>
+
+        <!-- end column game -->
+
+        <!-- Text result game -->
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="EMPATOU"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="26dp" />
+
+        <!-- end text result game -->
+
+        <!-- column buttons second player -->
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="300dp"
+            android:layout_gravity="center"
+            android:layout_height="100dp">
+
+            <ImageButton
+                android:id="@+id/imgBtnRockLeft"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:src="@drawable/rock_left"/>
+
+            <ImageButton
+                android:id="@+id/imgBtnPaperLeft"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:src="@drawable/paper_left"/>
+
+            <ImageButton
+                android:id="@+id/imgBtnScissorsLeft"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:src="@drawable/scissors_left"/>
+
+        </LinearLayout>
+
+        <!-- end column buttons second player -->
+
+        <!-- Result played -->
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center">
+
+            <!-- Result player one -->
+
+            <TextView
+                android:id="@+id/pointResultOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:text="Player one:"
+                android:textSize="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"/>
+
+            <!-- End result player one -->
+
+            <!-- Result player two -->
+
+            <TextView
+                android:id="@+id/pointResultTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Player two:"
+                android:textAlignment="textEnd"
+                android:textSize="15dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp"/>
+
+            <!-- Result player two -->
+
+        </LinearLayout>
+
+        <!-- End result played -->
+
+        <!-- Button play -->
+
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="JOGAR"
+            android:textSize="26dp"/>
+
+        <!-- end button play -->
+
+    </LinearLayout>
+
+    <!-- end container principal -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
