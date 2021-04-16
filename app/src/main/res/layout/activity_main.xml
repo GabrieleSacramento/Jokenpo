@@ -11,18 +11,34 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/back_ground">
 
         <!-- logo -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
-        <ImageButton
-            android:id="@+id/imgBtnLogo"
-            android:layout_width="120dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:src="@drawable/logo"/>
+            <ImageView
+                android:id="@+id/imgBtnLogo"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:src="@drawable/logo"
+                android:layout_marginLeft="140dp"/>
 
-        <!-- end logo -->
+            <ImageButton
+                android:id="@+id/btnReset"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:src="@drawable/reset_play"
+                android:layout_marginLeft="70dp"/>
+
+            <!-- end logo -->
+
+        </LinearLayout>
 
         <!-- column buttons first player -->
 
@@ -55,6 +71,28 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center">
+
+            <!-- Result player Two -->
+
+            <TextView
+                android:id="@+id/pointResultTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:text="Player Two:"
+                android:textSize="15dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="5dp"/>
+
+            <!-- End result player Two -->
+
+        </LinearLayout>
+
         <!-- end column buttons first player -->
 
         <!-- Column game -->
@@ -63,7 +101,7 @@
             android:orientation="horizontal"
             android:layout_width="300dp"
             android:layout_gravity="center"
-            android:layout_height="200dp">
+            android:layout_height="100dp">
 
             <!-- Player one -->
 
@@ -155,25 +193,9 @@
                 android:textAlignment="textEnd"
                 android:text="Player one:"
                 android:textSize="15dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="5dp"/>
 
             <!-- End result player one -->
-
-            <!-- Result player two -->
-
-            <TextView
-                android:id="@+id/pointResultTwo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Player two:"
-                android:textAlignment="textEnd"
-                android:textSize="15dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="30dp"/>
-
-            <!-- Result player two -->
 
         </LinearLayout>
 
@@ -186,7 +208,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="JOGAR"
+            android:text="PLAY"
             android:textSize="26dp"/>
 
         <!-- end button play -->

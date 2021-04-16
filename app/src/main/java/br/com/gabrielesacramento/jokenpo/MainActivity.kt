@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         //Desabilitar o botão jogar
         btnPlay.isEnabled = false
-
+        
         //Esconder os itens da aposta
         hide()
 
@@ -31,38 +31,44 @@ class MainActivity : AppCompatActivity() {
         //botões de escolha do jogo
         imgBtnRockLeft.setOnClickListener {
             playOneBet = 0
-            btnPlay.isEnabled = true
             hide()
+            lightButton()
+
         }
 
         imgBtnPaperLeft.setOnClickListener {
             playOneBet = 1
-            btnPlay.isEnabled = true
             hide()
+            lightButton()
+
         }
 
         imgBtnScissorsLeft.setOnClickListener {
             playOneBet = 2
-            btnPlay.isEnabled = true
             hide()
+            lightButton()
+
         }
 
         imgBtnRockRigth.setOnClickListener {
             playTwoBet = 0
-            btnPlay.isEnabled = true
             hide()
+            lightButton()
+
         }
 
         imgBtnPaperRigth.setOnClickListener {
             playTwoBet = 1
-            btnPlay.isEnabled = true
             hide()
+            lightButton()
+
         }
 
         imgBtnScissorsRigth.setOnClickListener {
             playTwoBet = 2
-            btnPlay.isEnabled = true
             hide()
+            lightButton()
+
         }
 
         btnPlay.setOnClickListener {
@@ -79,15 +85,35 @@ class MainActivity : AppCompatActivity() {
             }else{
                 hide()
             }
-        }
 
-        imgBtnLogo.setOnClickListener {
-            reset()
+            btnReset.setOnClickListener {
+                if (playOneBet != -1 || playTwoBet != -1) {
+
+                    tvResult.text = play()
+
+                    imgLeftBet.visibility = View.VISIBLE
+                    imgRightBet.visibility = View.VISIBLE
+                    tvResult.visibility = View.VISIBLE
+
+                    btnReset.isEnabled = false
+                }else{
+                    hide()
+                }
+
+                reset()
+            }
         }
+    }
+
+    fun lightButton() {
+
+        //Acender botão
+        btnPlay.isEnabled = playOneBet != -1 && playTwoBet != -1
     }
 
     fun reset() {
 
+        //Resetar jogo
         playerOneTotal = 0
         playerTwoTotal = 0
 
@@ -144,9 +170,17 @@ class MainActivity : AppCompatActivity() {
             playerOneTotal++
         }
 
+        restart()
+        
         pointResultOne.text = "Player one: $playerOneTotal ponto(s)"
         pointResultTwo.text = "Player Two: $playerTwoTotal ponto(s)"
 
         return end
+    }
+
+    fun restart() {
+
+        playOneBet = -1
+        playTwoBet = -1
     }
 }
