@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
@@ -13,10 +14,18 @@ class MainActivity : AppCompatActivity() {
     var playTwoBet: Int = -1
     var playerOneTotal: Int = 0
     var playerTwoTotal: Int = 0
+    var playerNameOne: String = "PLAYERONE"
+    var playerNameTwo: String = "PLAYERTWO"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //Get the Intent that started this activity extract the string
+        playerNameOne = intent.getStringExtra("PLAYERONE").toString()
+        playerNameTwo = intent.getStringExtra("PLAYERTWO").toString()
+
+        updatePlayerName()
 
         //Desabilitar o botão jogar
         btnPlay.isEnabled = false
@@ -105,6 +114,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun updatePlayerName() {
+
+        pointResultOne.text = "$playerNameOne: $playerOneTotal ponto(s)"
+        pointResultTwo.text = "$playerNameTwo: $playerTwoTotal ponto(s)"
+    }
+
     fun lightButton() {
 
         //Acender botão
@@ -117,9 +132,7 @@ class MainActivity : AppCompatActivity() {
         playerOneTotal = 0
         playerTwoTotal = 0
 
-        pointResultOne.text = "Player one: $playerOneTotal ponto(s)"
-        pointResultTwo.text = "Player Two: $playerTwoTotal ponto(s)"
-
+        updatePlayerName()
         hide()
     }
 
@@ -171,9 +184,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         restart()
-        
-        pointResultOne.text = "Player one: $playerOneTotal ponto(s)"
-        pointResultTwo.text = "Player Two: $playerTwoTotal ponto(s)"
+        updatePlayerName()
 
         return end
     }
