@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         playerNameOne = intent.getStringExtra("PLAYERONE").toString()
         playerNameTwo = intent.getStringExtra("PLAYERTWO").toString()
 
+        //Atualizar nome dos jogadores
         updatePlayerName()
 
         //Desabilitar o botão jogar
@@ -42,42 +43,36 @@ class MainActivity : AppCompatActivity() {
             playOneBet = 0
             hide()
             lightButton()
-
         }
 
         imgBtnPaperLeft.setOnClickListener {
             playOneBet = 1
             hide()
             lightButton()
-
         }
 
         imgBtnScissorsLeft.setOnClickListener {
             playOneBet = 2
             hide()
             lightButton()
-
         }
 
         imgBtnRockRigth.setOnClickListener {
             playTwoBet = 0
             hide()
             lightButton()
-
         }
 
         imgBtnPaperRigth.setOnClickListener {
             playTwoBet = 1
             hide()
             lightButton()
-
         }
 
         imgBtnScissorsRigth.setOnClickListener {
             playTwoBet = 2
             hide()
             lightButton()
-
         }
 
         btnPlay.setOnClickListener {
