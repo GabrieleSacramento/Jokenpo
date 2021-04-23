@@ -2,17 +2,13 @@ package br.com.gabrielesacramento.jokenpo
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import br.com.gabrielesacramento.jokenpo.R.id.etPlayerOne
-import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity: AppCompatActivity() {
 
-    var mNamePlayerOne: String = ""
-    var mNamePlayerTwo: String = ""
+    private var mNamePlayerOne: String = ""
+    private var mNamePlayerTwo: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,9 +25,9 @@ class HomeActivity: AppCompatActivity() {
         }
     }
 
-    fun goToGame() {
+    private fun goToGame() {
 
-        if(verifyFillNames() == true) {
+        if(!verifyFillNames()) {
 
             val intent = Intent(this, MainActivity::class.java).apply {
                 putExtra("PLAYERONE", mNamePlayerOne)
@@ -40,17 +36,18 @@ class HomeActivity: AppCompatActivity() {
 
             startActivity(intent)
         }else{
-            etPlayerOne.error = "Campo obrigatório"
-            etPlayerTwo.error = "Campo obrigatório"
+
+            etPlayerOne.error = if(mNamePlayerOne.isEmpty()) "Campo obrigatório" else null
+            etPlayerTwo.error = if(mNamePlayerTwo.isEmpty()) "Campo obrigatório" else null
         }
     }
 
-    fun verifyFillNames() : Boolean {
+    private fun verifyFillNames() : Boolean {
 
         mNamePlayerOne = etPlayerOne.text.toString()
         mNamePlayerTwo = etPlayerTwo.text.toString()
 
-        if(mNamePlayerOne.isEmpty() == true || mNamePlayerTwo.isEmpty() == true) {
+        if(mNamePlayerOne.isEmpty() || mNamePlayerTwo.isEmpty()) {
             return false
         }
 
