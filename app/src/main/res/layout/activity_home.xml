@@ -6,28 +6,30 @@
 
     <EditText
         android:id="@+id/etPlayerOne"
-        android:hint="Player one"
+        android:hint="@string/player_one"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/etPlayerTwo"
-        android:hint="Player two"
+        android:hint="@string/player_two"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="INICIAR"/>
+        android:text="@string/start"/>
 
     <Button
         android:id="@+id/btnAbout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SOBRE"/>
+        android:text="@string/about"/>
 
 </LinearLayout>

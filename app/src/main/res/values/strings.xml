@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">jokenpo</string>
+    <string name="app_name">Jokenpo</string>
+    <!-- buttons -->
+    <string name="start">Iniciar</string>
+    <string name="about">Sobre</string>
+    <string name="player_one">Jogador um</string>
+    <string name="player_two">Jogador dois</string>
+
+    <!-- messages -->
+    <string name="fill_required">Este campo é obrigatório</string>
 </resources>

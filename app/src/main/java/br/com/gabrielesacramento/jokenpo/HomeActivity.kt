@@ -27,7 +27,9 @@ class HomeActivity: AppCompatActivity() {
 
     private fun goToGame() {
 
-        if(!verifyFillNames()) {
+
+
+        if(verifyFillNames()) {
 
             val intent = Intent(this, MainActivity::class.java).apply {
                 putExtra("PLAYERONE", mNamePlayerOne)
@@ -37,8 +39,8 @@ class HomeActivity: AppCompatActivity() {
             startActivity(intent)
         }else{
 
-            etPlayerOne.error = if(mNamePlayerOne.isEmpty()) "Campo obrigatório" else null
-            etPlayerTwo.error = if(mNamePlayerTwo.isEmpty()) "Campo obrigatório" else null
+            etPlayerOne.error = if(mNamePlayerOne.isEmpty()) getString(R.string.fill_required) else null
+            etPlayerTwo.error = if(mNamePlayerTwo.isEmpty()) getString(R.string.fill_required) else null
         }
     }
 
